@@ -19,6 +19,8 @@ import ProtectAdminRoute from './components/admin/ProtectAdminRoute'
 import ViewCompanies from './components/admin/ViewCompanies'
 import AdminLogin from './components/auth/AdminLogin'
 import CompanyLogin from './components/auth/CompanyLogin'
+import CompanyFullDetails from './components/admin/CompanyFullDetails'
+import CompanySignup from './components/auth/CompanySignup'
 
 
 const appRouter = createBrowserRouter([
@@ -33,6 +35,10 @@ const appRouter = createBrowserRouter([
   {
     path: '/signup',
     element: <Signup />
+  },
+  {
+    path:"/company/signup",
+    element:<CompanySignup/>
   },
   {
     path: "/jobs",
@@ -95,7 +101,12 @@ const appRouter = createBrowserRouter([
   {
     path:"/admin/viewcompanies",
     element:<ProtectAdminRoute><ViewCompanies/></ProtectAdminRoute>
+  },
+  {
+    path:"/admin/companies/viewfullcompany",
+    element:<ProtectAdminRoute><CompanyFullDetails/></ProtectAdminRoute>
   }
+
 
 ])
 function App() {

@@ -4,9 +4,11 @@ import { Input } from '../ui/input'
 import { Button } from '../ui/button'
 import CompaniesTable from './CompaniesTable'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import useGetAllCompanies from '@/hooks/useGetAllCompanies'
 import { useDispatch } from 'react-redux'
 import { setSearchCompanyByText } from '@/redux/companySlice'
+import CompanyFullDetails from './CompanyFullDetails'
 
 const Companies = () => {
     useGetAllCompanies();
@@ -14,23 +16,35 @@ const Companies = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    const { companies } = useSelector(store => store.company);
+
     useEffect(()=>{
         dispatch(setSearchCompanyByText(input));
     },[input]);
+
+ 
     return (
         <div>
             <Navbar />
-            <div className='max-w-6xl mx-auto my-10'>
-                <div className='flex items-center justify-between my-5'>
-                    <Input
-                        className="w-fit"
-                        placeholder="Filter by name"
-                        onChange={(e) => setInput(e.target.value)}
-                    />
-                    <Button onClick={() => navigate("/admin/companies/create")}>New Company</Button>
+          
+            
+              <div className='flex  items-center justify-center my-5'>
+              { companies.length>0 ? 
+                <div className='flex  items-center justify-center '>
+            
+                <CompanyFullDetails/>
                 </div>
-                <CompaniesTable/>
+                
+                :
+                <div className='flex  items-center justify-center my-5'>
+    
+                <Button onClick={() => navigate("/admin/companies/create")}>Register Company</Button>
             </div>
+            
+              }
+                
+            </div>
+           
         </div>
     )
 }

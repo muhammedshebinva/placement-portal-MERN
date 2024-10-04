@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className='bg-white'>
             <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
                 <div>
-                    <img style={{ height:65}} src="https://scmsgroup.org/sset/wp-content/uploads/2023/08/sset-1.png"  alt=""></img>
+                    <img style={{ height:65}} src="https://thumbs.dreamstime.com/b/placement-vector-icon-job-illustration-sign-event-symbol-private-sign-placement-vector-icon-job-illustration-sign-event-symbol-285204379.jpg"  alt=""></img>
                 </div>
                 <div className='flex items-center gap-12'>
                     <ul className='flex font-medium items-center gap-5'>
@@ -62,13 +62,13 @@ const Navbar = () => {
                         !user ? (
                             <div className='flex items-center gap-2'>
                                 <Link to="/login"><Button variant="outline">Login</Button></Link>
-                                <Link to="/signup"><Button className="bg-[#E24C0C] hover:bg-[#d63637]">Signup</Button></Link>
+                                <Link to="/signup"><Button className="bg-[#2e4053] hover:bg-[#bfc9ca]">Signup</Button></Link>
                             </div>
                         ) : (
                             <Popover>
                                 <PopoverTrigger asChild>
                                     <Avatar className="cursor-pointer">
-                                        <AvatarImage src={user?.profile?.profilePhoto} alt="@shadcn" />
+                                        <AvatarImage src={user?.profile?.profilePhoto} alt="@logo" />
                                     </Avatar>
                                 </PopoverTrigger>
                                 <PopoverContent className="w-80">
