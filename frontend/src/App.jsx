@@ -18,6 +18,7 @@ import ViewStudents from './components/admin/ViewStudents'
 import ProtectAdminRoute from './components/admin/ProtectAdminRoute'
 import ViewCompanies from './components/admin/ViewCompanies'
 import AdminLogin from './components/auth/AdminLogin'
+import CompanyLogin from './components/auth/CompanyLogin'
 
 
 const appRouter = createBrowserRouter([
@@ -53,6 +54,11 @@ const appRouter = createBrowserRouter([
     path:"/admin/login",
     element:<AdminLogin/>
   },
+  {
+    path:"/company/login",
+    element:<CompanyLogin/>
+  },
+
 
   {
     path:"/admin/companies",
