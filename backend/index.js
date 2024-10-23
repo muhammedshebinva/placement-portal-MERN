@@ -8,6 +8,7 @@ import companyRoute from "./routes/company.route.js";
 import jobRoute from "./routes/job.route.js";
 import applicationRoute from "./routes/application.route.js";
 import adminRoute from "./routes/admin.route.js"
+import classRoute from "./routes/class.route.js";
 import path from 'path'
 import { fileURLToPath } from 'url';
 import { User } from "./models/user.model.js";
@@ -41,6 +42,7 @@ app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/job", jobRoute);
 app.use("/api/v1/application", applicationRoute);
 app.use("/api/admin", adminRoute )
+app.use('/api/classes', classRoute);
 
 app.listen(PORT,()=>{
     connectDB();
