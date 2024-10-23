@@ -21,6 +21,8 @@ import AdminLogin from './components/auth/AdminLogin'
 import CompanyLogin from './components/auth/CompanyLogin'
 import CompanyFullDetails from './components/admin/CompanyFullDetails'
 import CompanySignup from './components/auth/CompanySignup'
+import ViewClass from './components/admin/ViewClass'
+import ScheduledClassList from './components/ScheduledClassList'
 
 
 const appRouter = createBrowserRouter([
@@ -51,6 +53,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/browse",
     element: <Browse />
+  },
+  {
+    path:"/scheduledclass",
+    element:<ScheduledClassList/>
   },
   {
     path: "/profile",
@@ -105,6 +111,10 @@ const appRouter = createBrowserRouter([
   {
     path:"/admin/companies/viewfullcompany",
     element:<ProtectAdminRoute><CompanyFullDetails/></ProtectAdminRoute>
+  },
+  {
+    path:"/admin/ViewClass",
+    element:<ProtectAdminRoute><ViewClass/></ProtectAdminRoute>
   }
 
 
